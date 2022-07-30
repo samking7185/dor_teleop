@@ -1,0 +1,17 @@
+<launch>
+ <!-- joy node -->
+  <node pkg="joy" type="joy_node" name="dor_joy" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.12" />
+  </node>
+
+ <!-- Axes -->
+  <param name="base_linear" value="1" type="int"/>
+  <param name="base_angular" value="0" type="int"/>
+  <param name="device_linear_x_p" value="2" type="int"/>
+  <param name="device_linear_x_n" value="5" type="int"/>
+  <param name="device_linear_y" value="3" type="int"/>
+  <param name="device_linear_z" value="4" type="int"/>
+
+  <node pkg="dor_teleop" type="dor_teleop_joy" name="teleop"/>
+</launch>
