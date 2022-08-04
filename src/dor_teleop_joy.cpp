@@ -46,7 +46,7 @@ private:
     void joyCallback (const sensor_msgs::Joy::ConstPtr& joy);
     void motorCallback (const std_msgs::Float32MultiArray::ConstPtr& status);
     double getAxis(const sensor_msgs::JoyConstPtr& joy, const Axis &axis);
-    bool getButton(const sensor_msgs::JoyConstPtr& joy, const Axis &axis);
+    bool getButton(const sensor_msgs::JoyConstPtr& joy, const Button &button);
 
     ros::NodeHandle nh_;
     ros::Publisher vel_base_pub;
