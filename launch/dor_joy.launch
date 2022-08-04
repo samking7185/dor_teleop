@@ -5,13 +5,20 @@
     <param name="deadzone" value="0.12" />
   </node>
 
- <!-- Axes -->
-  <param name="base_linear" value="1" type="int"/>
-  <param name="base_angular" value="0" type="int"/>
-  <param name="device_linear_x_p" value="2" type="int"/>
-  <param name="device_linear_x_n" value="5" type="int"/>
-  <param name="device_linear_y" value="3" type="int"/>
-  <param name="device_linear_z" value="4" type="int"/>
+  <node pkg="dor_teleop" type="dor_teleop_joy" name="teleop">
+      <rosparam subst_value="true">
+      linear_axis: 1
+      angular_axis: 0
+      horizontal_axis: 4
+      vertical_axis: 5
+      stop_btn : 0
+      forward_btn: 4
+      backward_btn: 5
 
-  <node pkg="dor_teleop" type="dor_teleop_joy" name="teleop"/>
+      linear_scale: 2.0
+      angular_scale: 2.0
+      horizontal_scale: 1.0
+      vertical_scale: 1.0
+    </rosparam>
+  </node>
 </launch>
